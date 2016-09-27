@@ -1,0 +1,12 @@
+@(name:String)
+<!doctype html>
+<html>
+  <body>
+
+    <a href="@routes.Home.welcome()">Home</a>
+    <a href="@routes.Application.index()">Add user</a>
+    <a href="@routes.About.about()">About</a>
+    <h1>User</h1>
+    Username entered: @name
+  </body>
+</html>

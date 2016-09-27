@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+ <body>
+  <a href="@routes.Home.welcome()">Home</a>
+  <a>Add user</a>
+  <a href="@routes.About.about()">About</a>
+  <h1>Adding user</h1>
+  <form method="post" action="@routes.Application.handleForm()">
+    Username:  <input type="text" name="username">
+    <input type="submit" value="Submit Form">
+  </form>
+ </body>
+</html>
