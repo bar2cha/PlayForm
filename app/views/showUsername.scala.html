@@ -1,12 +1,26 @@
-@(name:String)
-<!doctype html>
-<html>
-  <body>
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String, name: String)
 
-    <a href="@routes.Home.welcome()">Home</a>
-    <a href="@routes.Application.index()">Add user</a>
-    <a href="@routes.About.about()">About</a>
-    <h1>User</h1>
-    Username entered: @name
-  </body>
-</html>
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main(message) {
+
+@*
+ * Get an `Html` object by calling the built-in Play welcome
+ * template and passing a `String` message.
+ *@
+
+ <a href="@routes.Home.welcome()">Home</a>
+ <a href="@routes.Application.index()">Add user</a>
+ <a href="@routes.About.about()">About</a>
+ <h1>User</h1>
+
+ Username entered: @name
+
+}

@@ -7,6 +7,6 @@ class Home extends Controller {
 
   // Simple action - just returns plain text to the browser.
   def welcome = Action {
-    Ok(views.html.home())
+    Ok(views.html.index("Home"))
   }
 }

@@ -1,4 +1,5 @@
 GET     /                           controllers.Application.index
+GET     /adduser                    controllers.Application.adduser
 GET     /home                       controllers.Home.welcome
 GET     /about                      controllers.About.about
 #GET     /assets/*file               controllers.Assets.at(path="/public", file)
