@@ -17,13 +17,43 @@
    * template and passing a `String` message.
    *@
 
-   <a href="@routes.Home.welcome()">Home</a>
-   <a>Add user</a>
-   <a href="@routes.About.about()">About</a>
-   <h1>Adding user</h1>
-   <form method="post" action="@routes.Application.handleForm()">
+  <a href="@routes.Home.welcome()">Home</a>
+  <a>Add user</a>
+  <a href="@routes.About.about()">About</a>
+
+  <h1>Adding user</h1>
+
+  <form method="post" action="@routes.Application.handleForm()">
      Username:  <input type="text" name="username">
-     <input type="submit" value="Submit Form">
-   </form>
-   @button(true)
+     <input type="submit" value="Add user">
+  </form>
+
+    <br />
+
+  <div id="OuterDivOrBody">
+    <input type="checkbox" id="checkbox1" />
+    <label for="checkbox1">Checkbox label</label>
+
+    <br />The confirm result:
+    <input type="text" id="textbox1" />
+  </div>
+
+  @button(true)
+  <script data-main="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript" src="@routes.Assets.versioned("lib/jquery/jquery.js")"></script>
+  <script data-main="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript" src="@routes.Assets.versioned("lib/bootstrap/js/bootstrap.min.js")"></script>
+
+  <script>
+  $(document).ready(function() {
+      //set initial state.
+      $('#textbox1').val($(this).is(':checked'));
+
+      $('#checkbox1').change(function() {
+          if($(this).is(":checked")) {
+              var returnVal = confirm("Are you sure?");
+              $(this).attr("checked", returnVal);
+          }
+          $('#textbox1').val($(this).is(':checked'));
+      });
+  });
+  </script>
 }

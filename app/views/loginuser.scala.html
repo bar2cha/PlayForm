@@ -1,0 +1,38 @@
+@*
+   *
+   * This template takes a single argument, a String containing a
+   * message to display.
+   *@
+@(message: String)
+
+  @*
+   * Call the `main` template with two arguments. The first
+   * argument is a `String` with the title of the page, the second
+   * argument is an `Html` object containing the body of the page.
+   *@
+@main("Add user") {
+
+  @*
+   * Get an `Html` object by calling the built-in Play welcome
+   * template and passing a `String` message.
+   *@
+
+  <a href="@routes.Home.welcome()">Home</a>
+  <a>Add user</a>
+  <a href="@routes.About.about()">About</a>
+
+  <h1>Adding user</h1>
+
+
+  <h1>Login Form</h1>
+  <form method="post" action="@routes.Application.doLogin()">
+      <label for="username">username:</label>
+      <input type="text" name="username" id="username">
+      <label for="password">password:</label>
+      <input type="text" name="password" id="password">
+      <input type="submit" value="Add login">
+  </form>
+
+
+  @button(true)
+}
